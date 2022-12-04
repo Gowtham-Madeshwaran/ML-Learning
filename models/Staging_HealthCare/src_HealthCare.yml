@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: HealthCare_Source
+    database: BI3_TRAINING_2022
+    schema: GOWTHAM_M
+    tables:
+      - name: Order_Details
+      - name: Customer_Details
+      - name: Product_Details
