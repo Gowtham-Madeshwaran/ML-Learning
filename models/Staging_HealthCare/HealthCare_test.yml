@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_Orders
+    columns:
+     - name: Order_ID
+       tests:
+        - unique
+        - not_null
+       description: Primary Key for Order_Details
+
+  - name: stg_Product
+    columns:
+     - name: Type_of_Product
+       tests:
+         - accepted_values:
+             values: ['Therapeutic','Diagnostic','Laboratory Device']
+       description: '{{doc("Order_Details_Type_of_Product")}}'
+
+  - name: stg_Customer
+    columns:
+     - name: Customer_ID
+       tests:
+         - unique
+         - not_null
+         - relationships:
+             to: ref('stg_Orders')
+             field: Customer_ID
+       description: Primary Key for Customer_Details

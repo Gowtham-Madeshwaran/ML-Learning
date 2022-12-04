@@ -3,7 +3,8 @@ with source as(
 ),
 Product_CTE as (
     select Product_ID,
-    Product_Name
+    Product_Name,
+    Type_of_Product
     from source
 )
 
